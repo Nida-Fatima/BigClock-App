@@ -1,0 +1,247 @@
+<!DOCTYPE >
+    <html>
+        <head>
+            <title>Set Background</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            
+            <link rel="stylesheet" href="css/main.css" type="text/css">
+            
+            <link rel="stylesheet" href="css/normalize.css" type="text/css">
+
+            <link rel="stylesheet" href="css/all.min.css" type="text/css">
+
+            <link rel="stylesheet" href="css/rangeslider.css">
+
+            <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.min.css" type="text/css">
+            
+            <meta name="description" content="This is a web page to set Background">
+           
+             <!-- [if IE]>
+				<script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+				<![endif]-->
+<style>	
+	
+
+
+</style>				
+			
+			
+        </head>
+        <body>
+             <!---Preloader Div-->
+            <div class="pre-loader">
+                <img src="images/circle-preloader.gif" alt="Pre Loader">
+            </div> 
+
+            <!-- /////////////////////---main-container Video/Image container---////////////////////// -->	
+
+            <!---Video/Image container Div-->
+                <div class="video-container">
+                    <img class="bg-img content-container" src="/">
+                    <video  id="video1" class="small-video content-container" autoplay muted data-object-fit></video> 
+                    </video>
+                </div>
+           
+            <!-- /////////////////////---Overlay Container---////////////////////// -->	
+
+            <div id="overlay-div"></div> 
+
+            <!-- /////////////////////---Clock---////////////////////// -->	
+  
+ 
+            <div class="clockWidget">
+                <div class="clock">
+                <span id="hours" class="time-holder"></span>
+                <span id="colon" class="time-holder"></span>
+                <span id="minutes" class="time-holder"></span>
+            </div>
+            </div>
+
+
+            <!-- ///////////////////--POP up--//////////////////////// -->
+
+			
+        <div class="pop-up">
+                
+            <!-- Close Button -->
+            <span class="close"><i class="fa fa-times" alt="Close option panal"></i></span>
+
+            <!-- Pop up content starts -->
+
+            <div class="overlay-content">
+
+                 <!-- Clock fieldset --> 
+                <fieldset  class="TAG">
+                    <legend id="date">MONDAY 23 DECEMBER 2020</legend>
+
+                    <div id="clock-switches">
+                        <!-- toggle switch for full screen -->
+                        <div class="toggle-switch">
+                            <h3 for="check-box">Really Big Clock </h3>
+                            <label class="switch full-screen-switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                            </label>   		     		
+                        </div>  
+
+                        <!-- Triangulated Version -->
+                        <div class="wow toggle-switch">
+                            <h3 for="check-box">Wow</h3>
+                            <label class="switch wow-switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                            </label>   		     		
+                        </div> 
+                    </div>
+                    <!-- Clock sizes -->
+                  
+                    <div id="clock-size" class="range-slider">
+                        <h4>Size</h4>
+                        <input type="range" min="0" max="100" value="100" class="range-slider touch-range">
+                    </div>
+
+                    <!-- Clock opacity slider -->
+                    <div id="clock-opacity" class="range-slider">
+                        <h4>Clock</h4>
+                        <input type="range" min="0" max="100" value="100" class="range-slider touch-range">
+                    </div>
+                    
+                </fieldset> 
+
+                
+					
+                <!-- Background Image fieldset --> 
+
+                <fieldset  class="TAG">
+                    <legend>IMAGE</legend>
+                    <div class="add-image">
+                        <button class="img1 btn">1</button>
+                        <button class="img2 btn">2</button>
+                        <button class="img3 btn">3</button>
+                        <button class="img4 btn">4</button>  
+                        <button class="new-img btn">
+                            <input type="file" accept="image/*">
+                        </button>
+                    </div> 
+                </fieldset>
+
+                <!-- Video fieldset --> 
+							
+                <fieldset  class="TAG" id="video-block">
+                    <legend>VIDEO</legend>
+                    <div class="add-video">
+                        <button class="video1">1</button>
+                        <button class="video2">2</button>
+                        <button class="video3">3</button>
+                        <button class="video4">4</button>
+                        <button class="new-video">
+                            <input  type="file" accept="video/*" >
+                        </button>
+                    </div>
+                     <!-- Video Controls -->
+
+                    <div class="video-controls">
+                        <div class="player-bar">
+                            <div class="progress">
+                                <!-- <span class="player-slider"></span> -->
+                                <div class="progress__filled"></div>
+                            </div>
+                            <span class="current">00:00</span> &nbsp; <span class="duration">00:00</span>
+                           
+                        </div>
+                        <div class="playback-bar">
+                            <span  class="toggle-play">
+                                <i class="fa fa-pause-circle"></i>
+                            </span>
+                            <input type="range" id="playback-slider"name="playback" min="0" value="0" class="range-slider">
+                        </div>
+
+                        <div class="volume-bar">
+                            <span  class="toggle-volume"> 
+                                <i  class="fa fa-volume-mute"></i>
+                            </span>
+                            <input type="range" id="vol-control"name="volume" min="0" max="100" value="100" class="range-slider">
+                        </div>
+                    </div>
+                </fieldset>					
+                    
+                <!-- Background Content opacity -->
+
+                <div id="image-opacity" class="range-slider">
+                    <h4>Screen</h4>
+                    <input type="range" min="0" max="100" value="100" class="range-slider touch-range">
+                </div>
+          
+					
+                <!-- Overlay Fieldset -->
+                <fieldset  class="TAG" id="overlay-block">
+                    <legend>COLOR OVERLAY</legend>
+                    <div class="overlay-setting">
+                        <div class="overlay-color">
+                                <h4 for="check-box">Color </h4>
+                            <input id="abc" type="color" value="#ff0080">  &nbsp;&nbsp;
+                        
+                            <h4 for="check-box">Overlay</h4>
+                            <label class="switch overlay">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div><!-- Overlay setting end tag -->		
+                </fieldset>	
+                    
+                 <!-- Overlay Opacity -->
+                 <div id="overlay-opacity" class="range-slider">
+                    <h4>Overlay</h4>
+                    <input type="range" min="0" max="100" value="50" class="range-slider touch-range">
+                </div>
+
+                <!-- Mobie Limitation Message -->
+                <fieldset id="mobile-limitation" class="TAG">
+                    <div class="">
+                        <h4>Switch to large screen to explore full functionalities</h4>
+                    </div>
+                </fieldset>
+                 <!-- -------------- system reset button ------------------- -->
+            <div class="system-reset">
+                <button class="reset">System Reset</button>
+            </div>
+            </div>
+            <!-- Pop up content ends -->					
+           
+        </div> <!-- Pop-up -->
+      
+			<!--load the CDN first-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        
+
+        
+        <!-- loading local version if CDN fails -->
+        <script>
+			window.jQuery || document.write('<script src="js/jquery-3.3.1.js" ><\/script>')
+		</script>
+        
+		<!-- custom script file -->
+				
+		<script src="js/main.js"></script>		
+				
+		<!--- JQuery UI --->
+        <script src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+
+        <!--- JQuery Touch Punch Library for touch screen --->
+        <script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
+        
+        <script src="js/jquery.vide.js"></script>
+
+        <!--- JQuery poly-fill Library for object-fit fallback in edge/IE --->
+
+        <script src="js/objectFitPolyfill.basic.min.js"></script>
+
+
+        <!-- font awesome script file -->
+        <script src="js/all.min.js"></script>
+
+        <script src="js/rangeslider.js"></script>
+        	
+		</body>
+    </html>
